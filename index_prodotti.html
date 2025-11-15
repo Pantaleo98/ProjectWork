@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodotti</title>
+    <link rel="stylesheet" href="tesi_style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <img src="./img/logo_playled.png" alt="Logo PlayLed" class="logo">
+            <p>INNOVAZIONE E RICERCA MADE IN ITALY</p> 
+        </div>
+    </header>
+     <nav>
+        <ul>
+            <li><a href="./index_home.html">Home</a></li>   <!--SI EFFETTUA LA SCELTA DI INSERIRE I COLLEGAENTI CON I DIVERSI FOGLI HTML PER DARE L'ASPETTO PIU' PULITO ALLA PAGINA WEB-->
+            <li><a href="./index_prodotti.html">Prodotti</a></li> 
+            <li><a href="./index_contatti.html">Contatti</a></li>
+            <li><a href="./index_download.html">Download</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="prodotti">
+            <h2>Prodotti</h2>
+            <p>Ecco alcuni dei prodotti innovativi per l'illuminazione</p>
+            <div class="products-grid">
+                <div>
+                    <img src="./img/verde.jpg" alt="Big Color One" class="product-image" onclick="openProductModal('./img/verde.jpg', 'Big Color One Green', 'Proiettore da esterno ad alte prestazioni con sistema di luce multi-chip per͏ rendere migliore la distribuzione della ͏luce e garantire una alta efficienza e affidabilità. Rivestito con ͏vernic͏i epossidiche dure, bulloni in acciaio inox e sistema goniometrico per una͏ precisione del fascio ͏di luce.')">
+                    <h3>Big Color One Green</h3>
+                </div>
+
+                <div>
+                    <img src="./img/rosso.jpg" alt="Big Color One" class="product-image" onclick="openProductModal('./img/rosso.jpg', 'Big Color One Red', 'Proiettore da esterno ad alte prestazioni con sistema di luce multi-chip per͏ rendere migliore la distribuzione della ͏luce e garantire una alta efficienza e affidabilità. Rivestito con ͏vernic͏i epossidiche dure, bulloni in acciaio inox e sistema goniometrico per una͏ precisione del fascio ͏di luce.')">
+                    <h3>Big Color One Red</h3>
+                </div>
+
+                <div>
+                    <img src="./img/blu.jpg" alt="Big Color One" class="product-image" onclick="openProductModal('./img/blu.jpg', 'Big Color One Blu', 'Proiettore da esterno ad alte prestazioni con sistema di luce multi-chip per͏ rendere migliore la distribuzione della ͏luce e garantire una alta efficienza e affidabilità. Rivestito con ͏vernic͏i epossidiche dure, bulloni in acciaio inox e sistema goniometrico per una͏ precisione del fascio ͏di luce.')">
+                    <h3>Big Color One Blu</h3>
+                </div>
+
+                <div>
+                    <img src="./img/multicolor.jpg" alt="Big Color One" class="product-image" onclick="openProductModal('./img/multicolor.jpg', 'Big Color One Multicolor', 'Proiettore da esterno ad alte prestazioni con sistema di luce multi-chip per͏ rendere migliore la distribuzione della ͏luce e garantire una alta efficienza e affidabilità. Rivestito con ͏vernic͏i epossidiche dure, bulloni in acciaio inox e sistema goniometrico per una͏ precisione del fascio ͏di luce.')">
+                    <h3>Big Color One Multicolor</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Modal per i prodotti -->
+    <div id="productModal" class="product-modal">
+        <div class="product-modal-content">
+            <span class="close" onclick="closeProductModal()">&times;</span>
+            <img id="modalProductImg" src="" alt="Prodotto">
+            <h2 id="modalProductTitle"></h2>
+            <p id="modalProductDesc"></p>
+        </div>
+    </div>
+
+    <script>
+        function openProductModal(imgSrc, title, desc) {
+            document.getElementById('productModal').style.display = 'block';
+            document.getElementById('modalProductImg').src = imgSrc;
+            document.getElementById('modalProductTitle').innerHTML = title;
+            document.getElementById('modalProductDesc').innerHTML = desc;
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        // Chiusura dei Modal
+        window.onclick = function(event) {
+            const modal= document.getElementById('productModal')
+            if (event.target == modal) {
+                closeProductModal();
+            }
+        }
+        </script>
+    
+   <!-- Footer aggiunto -->
+     <footer>
+        <p>Tutti i diritti riservati, sito web realizzato ai fini didattici universitari</p>
+        <p>Evangelista Pantaleo</p>
+        <p>Matricola: 0312200612 </p>
+        <p>Via Vecchia Madonna dello Sterpeto, 118/120-122, 76121 Barletta BT |
+            <a href="=tel:0883642125">Tel: 0883642125</a>
+            <a href="https://www.playled.it/" target="_blank">www.playled.it</a>
+        </p>
+     </footer>
+    </body>
+    </html>
